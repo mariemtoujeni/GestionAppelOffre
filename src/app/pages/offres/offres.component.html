@@ -1,0 +1,50 @@
+<div class="container mt-5">
+
+  <h2>Liste des poubelles</h2>
+
+
+
+  <table class="table table-striped table-bordered table-hover mt-4">
+
+    <thead>
+
+      <tr>
+
+        <th>titre</th>
+
+        <th>description</th>
+
+        <th>date de debut</th>
+
+        <th>date de fin</th>
+
+      </tr>
+
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let offre of offres">
+
+        <td>{{ offre.titre }}</td>
+
+        <td>{{ offre.description }}</td>
+
+        <td>{{ offre.dateDebut }}</td>
+
+        <td>{{ offre.dateFin }}</td>
+        <td>
+
+          <button (click)="modifierOffres(offre._id)" class="btn btn-warning" >Modifier</button>
+          <button (click)="voirDetailsOffre(offre._id)" class="btn btn-primary">Détails</button>
+          <button (click)="supprimerOffres(offre._id)" class="btn btn-danger ml-2">Supprimer</button>
+
+        </td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</div>
